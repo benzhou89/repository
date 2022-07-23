@@ -24,6 +24,14 @@ public class Movie {
         this.specialCode = specialCode;
     }
 
+    public Movie(String title, Duration runningTime, double ticketPrice, int specialCode, String description) {
+        this.title = title;
+        this.runningTime = runningTime;
+        this.ticketPrice = ticketPrice;
+        this.specialCode = specialCode;
+        this.description = description;
+    }
+    
     public String getTitle() {
         return title;
     }
@@ -53,9 +61,9 @@ public class Movie {
         }
 
         double sequenceDiscount = 0;
-        if (showSequence == 1) {
+        if (showing.isSequence(1)) {
             sequenceDiscount = 3; // $3 discount for 1st show
-        } else if (showSequence == 2) {
+        } else if (showing.isSequence(2)) {
 
             sequenceDiscount = 2; // $2 discount for 2nd show
         }
