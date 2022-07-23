@@ -78,7 +78,7 @@ public class Theater {
                 return;
             }
 
-            if (schedule.replace(dateKey, local, showings))
+            if (schedule.replace(dateKey, local, showings))   //if replace failed, need go to loop
                 return;
         }
     }
