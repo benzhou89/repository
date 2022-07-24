@@ -80,6 +80,9 @@ public class MovieTests {
         showing = new Showing(testMovie2, 3, LocalDateTime.of(date, time));
         assertEquals(3.75, testMovie2.calculateTicketPrice(showing));  //there is $1 discount (25% and $1 rules, apply 25% one)
         
+        time = LocalTime.of(10, 50);
+        showing = new Showing(testMovie2, 3, LocalDateTime.of(date, time));
+        assertEquals(4, testMovie2.calculateTicketPrice(showing));  //there is $1 discount (no 25% discount due to before 11am
         
         System.out.println(Duration.ofMinutes(90));
     }
