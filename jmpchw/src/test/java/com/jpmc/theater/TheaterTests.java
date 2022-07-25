@@ -55,6 +55,13 @@ public class TheaterTests {
 	}
 	
 	@Test
+	void cleanSchedule() {
+		Theater theater = new Theater(LocalDateProvider.singleton());
+		theater.cleanSchedule(LocalDate.now());
+		theater.cleanSchedule(LocalDate.now().minusDays(1));
+	}
+	
+	@Test
 	void printMovieSchedule() {
 		Theater theater = new Theater(LocalDateProvider.singleton());
 		theater.printSchedule();

@@ -83,6 +83,12 @@ public class Theater {
         }
     }
     
+    //this method is used to clean up the expired date schedule
+    public void cleanSchedule(LocalDate dateKey) {
+    	schedule.remove(dateKey);
+    	System.out.println("the schedule is cleaned for "+dateKey);
+    }
+    
     public Reservation reserve(Customer customer, int sequence, int howManyTickets, LocalDate localDate) {
         Showing showing;
         try {
